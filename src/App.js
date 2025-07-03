@@ -13,6 +13,7 @@ function App() {
   const [toUnit, setToUnit] = useState(categories["Length"][1]);
   const [value, setValue] = useState("");
   const [result, setResult] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     setFromUnit(categories[category][0]);
@@ -73,8 +74,14 @@ function App() {
   }, [value, fromUnit, toUnit, category]);
 
   return (
-    <div className="container">
-      <h1>🌟 Universal Unit Converter</h1>
+    <div className={darkMode ? "container dark" : "container"}>
+      <div className="toggle">
+        <button onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+        </button>
+      </div>
+
+      <h1>🔄 Universal Unit Converter</h1>
 
       <div className="form-group">
         <label>Choose Category:</label>
