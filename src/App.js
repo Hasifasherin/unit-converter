@@ -73,6 +73,14 @@ function App() {
     setResult(res.toFixed(4));
   }, [value, fromUnit, toUnit, category]);
 
+  const handleReset = () => {
+    setCategory("Length");
+    setFromUnit(categories["Length"][0]);
+    setToUnit(categories["Length"][1]);
+    setValue("");
+    setResult(null);
+  };
+
   return (
     <div className={darkMode ? "container dark" : "container"}>
       <div className="toggle">
@@ -81,7 +89,7 @@ function App() {
         </button>
       </div>
 
-      <h1>🔄 Universal Unit Converter</h1>
+      <h1> Universal Unit Converter</h1>
 
       <div className="form-group">
         <label>Choose Category:</label>
@@ -124,6 +132,12 @@ function App() {
             </option>
           ))}
         </select>
+      </div>
+
+      <div className="buttons">
+        <button className="reset-btn" onClick={handleReset}>
+          🔄 Reset
+        </button>
       </div>
 
       <div className="preview">

@@ -63,6 +63,25 @@ select {
   font-size: 1rem;
 }
 
+.buttons {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.reset-btn {
+  padding: 0.6rem 1.5rem;
+  background-color: #ff5e5e;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background-color: #cc4a4a;
+}
+
 .preview {
   margin-top: 2rem;
   font-size: 1.2rem;
@@ -72,4 +91,26 @@ select {
 
 .container.dark .preview {
   color: #7bdff2;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    margin: 2rem 1rem;
+    padding: 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .toggle {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+  }
 }
